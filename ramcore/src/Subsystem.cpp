@@ -16,6 +16,7 @@ namespace ramcore{
 
         while(!isShutdown())
         {
+            //Get the current time, update, then wait until the next specified time.
             last = chrono::system_clock::now();
             onUpdate();
             this_thread::sleep_until(last + std::chrono::milliseconds(interval));

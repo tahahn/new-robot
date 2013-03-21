@@ -12,11 +12,15 @@ namespace ramcore
     class Message
     {
     public:
+        /* Specifies the type of data encoded in the message. */
         enum {TYPE_INVALID = 0, TYPE_RAW = 1, TYPE_STRING = 2, TYPE_JSON = 3};
 
     private:
-        struct timeval msg_time;    
+        /* Timestamp for when the message was created. */
+        struct timeval msg_time;
+        /* A number representing the type of the message, see the enum above. */
         int msg_type;
+        /* The ZMQ message to send over the socket; contains all the data. */
         zmq::message_t msg;
 
     public:
