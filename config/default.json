@@ -1,0 +1,8 @@
+{
+    "subprocesses": {
+        "example" : {
+            "filename" : "example.txt",
+            "some_number" : 5
+        }
+    }
+}
